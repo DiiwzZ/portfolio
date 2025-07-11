@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vuttipat Prapai - Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-code-square me-2"></i>
+        Portfolio
+      </a>
+      
+      <!-- Mobile toggle button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <!-- Navbar content -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+        </ul>
+        
+        <!-- Language switcher -->
+        <div class="navbar-nav">
+          <div class="lang-buttons">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="th">TH</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h1>สวัสดีครับ,</h1>
+      <div class="intro">
+        ผมชื่อ วุฒิภัทร ประไพ (Dew),<br>
+        นักศึกษา IT มหาวิทยาลัยกรุงเทพ,<br>
+        ผู้หลงใหลในการออกแบบ UX/UI และกราฟิกดีไซน์
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- About Section -->
+    <section class="about" id="about">
+      <h2>เกี่ยวกับฉัน</h2>
+      <p>มีความสนใจและถนัดด้านการออกแบบ UX/UI, งานกราฟิกดีไซน์ รวมถึงเข้าใจพื้นฐานการพัฒนา Frontend ผมสามารถใช้งานเครื่องมือออกแบบอย่าง Figma, Adobe Photoshop, และ Adobe Illustrator ได้คล่อง พร้อมทั้งมีพื้นฐานการใช้ Word และ Excel ในระดับที่สามารถจัดทำเอกสารหรือวิเคราะห์ข้อมูลเบื้องต้นได้</p>
+      
+      <h3>ทักษะที่ถนัด</h3>
+      <div class="skills">
+        <div class="skill-category">
+          <h4>Design & UX/UI</h4>
+          <span class="skill"><i class="bi bi-palette"></i>Figma</span>
+          <span class="skill"><i class="bi bi-pencil"></i>Adobe Photoshop</span>
+          <span class="skill"><i class="bi bi-vector-pen"></i>Adobe Illustrator</span>
+          <span class="skill"><i class="bi bi-person-workspace"></i>UX/UI Design</span>
+        </div>
+        
+        <div class="skill-category">
+          <h4>Frontend Development</h4>
+          <span class="skill"><i class="bi bi-code-slash"></i>HTML/CSS</span>
+          <span class="skill"><i class="bi bi-braces"></i>JavaScript</span>
+          <span class="skill"><i class="bi bi-box"></i>Angular</span>
+        </div>
+
+        <div class="skill-category">
+          <h4>Business Tools</h4>
+          <span class="skill"><i class="bi bi-file-word"></i>Microsoft Word</span>
+          <span class="skill"><i class="bi bi-file-excel"></i>Microsoft Excel</span>
+        </div>
+      </div>
+
+      <h3>เป้าหมายในการฝึกงาน</h3>
+      <ul class="goals">
+        <li><i class="bi bi-target"></i>เพิ่มพูนประสบการณ์การออกแบบจริงในสถานการณ์ทำงานจริง</li>
+        <li><i class="bi bi-people"></i>เรียนรู้การทำงานร่วมกับนักพัฒนาและทีมออกแบบ</li>
+        <li><i class="bi bi-graph-up"></i>พัฒนาทักษะ UX/UI และเข้าใจการวิเคราะห์พฤติกรรมผู้ใช้ให้ดียิ่งขึ้น</li>
+      </ul>
+
+      <a href="#" class="btn resume-btn">
+        <i class="bi bi-file-earmark-text"></i>
+        ดูเรซูเม่ของผม (.pdf)
+      </a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="projects">
+      <h2>Selected Projects</h2>
+      <div class="works">
+        <div class="work">
+          <div class="work-title">Project 1</div>
+          <div class="work-desc">Brief description of the project, tools used, and my role in its development.</div>
+        </div>
+        <div class="work">
+          <div class="work-title">Project 2</div>
+          <div class="work-desc">Brief description of the project, tools used, and my role in its development.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+      <h2>Want to offer me a job?</h2>
+      <ul class="contact-list">
+        <li>
+          <i class="bi bi-telephone"></i>
+          <a href="tel:+66999999999">+66(0)9.9999.9999</a>
+        </li>
+        <li>
+          <i class="bi bi-envelope"></i>
+          <a href="mailto:your.email@example.com">hello@yourdomain.com</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
