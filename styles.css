@@ -997,4 +997,90 @@ section h2 {
     background-size: 80%;
     background-position: center center;
   }
+}
+
+/* Maginta Design Section - รูปการออกแบบ */
+.maginta-design-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.maginta-design-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.maginta-design-img {
+  width: 50%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.maginta-design-caption {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Maginta Result Grid - รูปผลลัพธ์ 2 grid */
+.maginta-result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.maginta-result-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.maginta-result-img {
+  width: 60%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 8px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.maginta-result-caption {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .maginta-design-img {
+    width: 70%;
+  }
+  
+  .maginta-result-grid {
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .maginta-design-img {
+    width: 85%;
+  }
+  
+  .maginta-result-grid {
+    gap: 4px;
+  }
 } 
