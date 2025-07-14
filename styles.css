@@ -475,6 +475,53 @@ section h2 {
   }
 }
 
+.illustrator-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.illustrator-gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 220px;
+  flex: 1 1 160px;
+}
+
+.illustrator-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 8px;
+  object-fit: cover;
+  background: #fff;
+  display: block;
+}
+
+.illustrator-caption {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .illustrator-gallery {
+    gap: 12px;
+  }
+  .illustrator-gallery-item {
+    max-width: 120px;
+  }
+  .illustrator-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
 /* Responsive Updates */
 @media (max-width: 768px) {
   .container {
@@ -538,5 +585,193 @@ section h2 {
   .work.figma-bg {
     background-position: center;
     background-size: contain;
+  }
+} 
+
+.work.illustrator-bg {
+  background: linear-gradient(120deg, rgba(18,18,18,0.92) 60%, rgba(18,18,18,0.7) 100%), url('images/illustrator/AI_logo.png');
+  background-size: 360px ;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-color: #18181800;
+  position: relative;
+  color: var(--primary);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+
+
+.work.illustrator-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .work.illustrator-bg {
+    background-size: contain;
+    background-position: center center;
+  }
+  .work.illustrator-bg::before {
+    background-size: contain;
+    background-position: center center;
+  }
+} 
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.logo-grid-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center ;
+  justify-content: center;
+  gap: 0;
+  height: 70%;
+  margin-right: 0px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo-grid-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-profile-img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  object-fit: contain;
+  background: #fff;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .logo-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .logo-grid-right {
+    align-items: stretch;
+  }
+  .logo-profile-img {
+    max-width: 100%;
+  }
+} 
+
+.overlap-gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 40px;
+  position: relative;
+  min-height: 120px;
+}
+
+.overlap-img {
+  width: 135px;
+  height: 135px;
+  border-radius: 40px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  object-fit: contain;
+  display: block;
+  margin-left: -10px;
+  border: 1px solid #222;
+  background: #181818;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), z-index 0.2s;
+  z-index: 1;
+}
+.overlap-img:first-child { margin-left: 0; }
+.overlap-img:hover, .overlap-img:focus {
+  transform: scale(1.3) translateY(-12px);
+  z-index: 2;
+  border-color: var(--primary);
+}
+
+.logo-popup-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.logo-popup-modal.active { display: flex; }
+.logo-popup-content {
+  max-width: 90vw;
+  max-height: 70vh;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  background: #fff;
+  margin-bottom: 16px;
+}
+.logo-popup-close {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  position: absolute;
+  top: 32px;
+  right: 48px;
+  cursor: pointer;
+  z-index: 10001;
+  transition: color 0.2s;
+}
+.logo-popup-close:hover { color: #ffb300; }
+.logo-popup-caption {
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  text-shadow: 1px 1px 4px #000;
+}
+@media (max-width: 900px) {
+  .overlap-img {
+    width: 110px;
+    height: 110px;
+    margin-left: -10px;
+  }
+  .logo-grid-left {
+    margin-right: 0;
+  }
+} 
+
+@media (max-width: 600px) {
+  .overlap-gallery {
+    gap: 8px;
+    min-height: 60px;
+  }
+  .overlap-img {
+    width: 28vw;
+    height: 28vw;
+    max-width: 80px;
+    max-height: 80px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .logo-grid-left {
+    justify-content: flex-start;
   }
 } 
