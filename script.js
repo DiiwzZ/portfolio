@@ -44,4 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
             skill.style.transform = 'translateY(0)';
         });
     });
+
+    // Video controls - reset to poster after ending
+    document.querySelectorAll('video').forEach(video => {
+        video.addEventListener('ended', function() {
+            // Reset video to beginning and show poster
+            this.currentTime = 0;
+            this.load(); // This will reload the video and show poster
+        });
+    });
 }); 
