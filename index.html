@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,11 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">
+      <a class="navbar-brand d-flex align-items-center" href="#top">
         <i class="bi bi-code-square me-2"></i>
         Portfolio
       </a>
@@ -27,25 +27,20 @@
       
       <!-- Navbar content -->
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto">
+        <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#work-experiences">Work Experiences</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project-contents">Project Contents</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#contact">Contact</a>
           </li>
         </ul>
-        
-        <!-- Language switcher -->
-        <div class="navbar-nav">
-          <div class="lang-buttons">
-            <button class="lang-btn active" data-lang="en">EN</button>
-            <button class="lang-btn" data-lang="th">TH</button>
-          </div>
-        </div>
       </div>
     </div>
   </nav>
@@ -53,11 +48,11 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="container">
-      <h1>สวัสดีครับ,</h1>
+      <h1>Hello,</h1>
       <div class="intro">
-        ผมชื่อ วุฒิภัทร ประไพ (Dew),<br>
-        นักศึกษา IT มหาวิทยาลัยกรุงเทพ,<br>
-        ผู้หลงใหลในการออกแบบ UX/UI และกราฟิกดีไซน์
+        My name is Vuttipat Prapai (Dew),<br>
+        an IT Student at Bangkok University,<br>
+        passionate about UX/UI and Graphic Design
       </div>
     </div>
   </header>
@@ -65,10 +60,10 @@
   <div class="container">
     <!-- About Section -->
     <section class="about" id="about">
-      <h2>เกี่ยวกับฉัน</h2>
-      <p>มีความสนใจและถนัดด้านการออกแบบ UX/UI, งานกราฟิกดีไซน์ รวมถึงเข้าใจพื้นฐานการพัฒนา Frontend ผมสามารถใช้งานเครื่องมือออกแบบอย่าง Figma, Adobe Photoshop, และ Adobe Illustrator ได้คล่อง พร้อมทั้งมีพื้นฐานการใช้ Word และ Excel ในระดับที่สามารถจัดทำเอกสารหรือวิเคราะห์ข้อมูลเบื้องต้นได้</p>
+      <h2>About Me</h2>
+      <p>I specialize in UX/UI design and graphic design, with a solid foundational knowledge of front-end development. I am proficient in industry-standard design tools such as Figma, Adobe Photoshop, and Adobe Illustrator, and possess a good working knowledge of Microsoft Word and Excel for documentation and basic data handling.</p>
       
-      <h3>ทักษะที่ถนัด</h3>
+      <h3>Skills</h3>
       <div class="skills">
         <div class="skill-category">
           <h4>Design & UX/UI</h4>
@@ -77,60 +72,100 @@
           <span class="skill"><i class="bi bi-vector-pen"></i>Adobe Illustrator</span>
           <span class="skill"><i class="bi bi-person-workspace"></i>UX/UI Design</span>
         </div>
-        
+
+        <div class="skill-category">
+          <h4>Presentation & Documentation</h4>
+          <span class="skill"><i class="bi bi-file-word"></i>Microsoft Word</span>
+          <span class="skill"><i class="bi bi-file-excel"></i>Microsoft Excel</span>
+          <span class="skill"><i class="bi bi-easel"></i>PowerPoint</span>
+          <span class="skill"><i class="bi bi-brush"></i>Canva</span>
+        </div>
+
         <div class="skill-category">
           <h4>Frontend Development</h4>
           <span class="skill"><i class="bi bi-code-slash"></i>HTML/CSS</span>
           <span class="skill"><i class="bi bi-braces"></i>JavaScript</span>
-          <span class="skill"><i class="bi bi-box"></i>Angular</span>
         </div>
-
-        <div class="skill-category">
-          <h4>Business Tools</h4>
-          <span class="skill"><i class="bi bi-file-word"></i>Microsoft Word</span>
-          <span class="skill"><i class="bi bi-file-excel"></i>Microsoft Excel</span>
-        </div>
+        
       </div>
 
-      <h3>เป้าหมายในการฝึกงาน</h3>
+      <h3>Internship Goals</h3>
       <ul class="goals">
-        <li><i class="bi bi-target"></i>เพิ่มพูนประสบการณ์การออกแบบจริงในสถานการณ์ทำงานจริง</li>
-        <li><i class="bi bi-people"></i>เรียนรู้การทำงานร่วมกับนักพัฒนาและทีมออกแบบ</li>
-        <li><i class="bi bi-graph-up"></i>พัฒนาทักษะ UX/UI และเข้าใจการวิเคราะห์พฤติกรรมผู้ใช้ให้ดียิ่งขึ้น</li>
+        <li><i class="bi bi-laptop"></i>Gain hands-on experience in UX/UI and graphic design in a real-world setting</li>
+        <li><i class="bi bi-people"></i>Improve collaboration skills with developers and design teams</li>
+        <li><i class="bi bi-graph-up"></i>Improve UX/UI skills and user behavior analysis</li>
       </ul>
 
-      <a href="#" class="btn resume-btn">
-        <i class="bi bi-file-earmark-text"></i>
-        ดูเรซูเม่ของผม (.pdf)
-      </a>
+
     </section>
 
     <!-- Portfolio Section -->
     <section class="portfolio" id="projects">
-      <h2>Selected Projects</h2>
+      <h2>My Projects</h2>
+      
+      <!-- Work Experiences -->
+      <h3 id="work-experiences">Work Experiences</h3>
       <div class="works">
         <div class="work">
-          <div class="work-title">Project 1</div>
-          <div class="work-desc">Brief description of the project, tools used, and my role in its development.</div>
+          <div class="work-title">Freelance Graphic Designer</div>
+          <div class="work-desc">Designed social media graphics, banners, and promotional materials for small businesses and online shops. Used Figma, Canva, and Adobe Photoshop to deliver creative solutions tailored to client needs.</div>
+          <a href="https://www.canva.com/" target="_blank" class="btn btn-sm btn-outline-light mt-2">View Sample (Canva)</a>
         </div>
         <div class="work">
-          <div class="work-title">Project 2</div>
-          <div class="work-desc">Brief description of the project, tools used, and my role in its development.</div>
+          <div class="work-title">Intern UX/UI Designer</div>
+          <div class="work-desc">Interned at a local tech company, collaborating with developers and senior designers to create wireframes and prototypes for a mobile application. Focused on user research and usability testing.</div>
+        </div>
+      </div>
+
+      <!-- Project Contents -->
+      <h3 id="project-contents" class="mt-5">Project Contents</h3>
+      <div class="works">
+        <div class="work figma-bg">
+          <div class="work-title">Figma Project</div>
+          <div class="work-desc">A UX/UI design project for IT373 User Experience and User Interface Design course. Created wireframes, prototypes, and final UI designs using Figma, focusing on user-centered design principles and interactive elements.</div>
+          <div class="figma-gallery mt-4 mb-2">
+            <div class="figma-gallery-item">
+              <img src="images/figma/home_page.png" alt="Home Page" class="figma-img">
+              <div class="figma-caption">Home</div>
+            </div>
+            <div class="figma-gallery-item">
+              <img src="images/figma/search_page.png" alt="Search Page" class="figma-img">
+              <div class="figma-caption">Search</div>
+            </div>
+            <div class="figma-gallery-item">
+              <img src="images/figma/search_page2.png" alt="Search Page 2" class="figma-img">
+              <div class="figma-caption">Search (Result)</div>
+            </div>
+            <div class="figma-gallery-item">
+              <img src="images/figma/trip.png" alt="Trip Page" class="figma-img">
+              <div class="figma-caption">Trip</div>
+            </div>
+            <div class="figma-gallery-item">
+              <img src="images/figma/booking.png" alt="Booking Page" class="figma-img">
+              <div class="figma-caption">Booking</div>
+            </div>
+          </div>
+          <a href="https://www.figma.com/proto/lhzDNaEymPjYeLNW3y2Vy8/UI-design?page-id=0%3A1&node-id=54-246&p=f&viewport=-2093%2C2648%2C0.51&t=prXmzIlS8OuC8C8A-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=54%3A246" target="_blank" class="btn btn-sm btn-outline-light mt-2">View on Figma</a>
+        </div>
+        <div class="work">
+          <div class="work-title">UX/UI Portfolio</div>
+          <div class="work-desc">A personal portfolio website showcasing UX/UI design skills and projects. Designed and developed with a focus on clean aesthetics, responsive layout, and intuitive navigation to highlight design capabilities.</div>
+          <a href="#top" class="btn btn-sm btn-outline-light mt-2">View This Portfolio</a>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-      <h2>Want to offer me a job?</h2>
+      <h2>Contact Me</h2>
       <ul class="contact-list">
         <li>
           <i class="bi bi-telephone"></i>
-          <a href="tel:+66999999999">+66(0)9.9999.9999</a>
+          <a href="tel:+66661516545">066-151-6545</a>
         </li>
         <li>
           <i class="bi bi-envelope"></i>
-          <a href="mailto:your.email@example.com">hello@yourdomain.com</a>
+          <a href="mailto:nadewman5@gmail.com">nadewman5@gmail.com</a>
         </li>
       </ul>
     </section>

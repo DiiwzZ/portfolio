@@ -44,7 +44,7 @@ body {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 20px 24px;
 }
 
 /* Bootstrap Navbar Custom Styles */
@@ -53,13 +53,16 @@ body {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   transition: all 0.3s ease;
-  padding: 1rem 0;
+  padding: 0;
+  min-height: 40px;
+  line-height: 1;
 }
 
 .navbar-brand {
   color: var(--text) !important;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease;
+  padding: 8px 0;
 }
 
 .navbar-brand:hover {
@@ -72,6 +75,9 @@ body {
   margin: 0 0.5rem;
   transition: all 0.3s ease;
   position: relative;
+  padding: 8px 12px;
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .navbar-nav .nav-link:hover,
@@ -97,7 +103,8 @@ body {
 
 .navbar-toggler {
   border: none;
-  padding: 0.25rem;
+  padding: 4px;
+  margin: 0;
 }
 
 .navbar-toggler:focus {
@@ -108,56 +115,52 @@ body {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23e1e1e1' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-/* Language Switcher */
-.lang-buttons {
-  display: flex;
-  gap: 8px;
-  margin-left: 16px;
-}
-
-.lang-btn {
-  background: var(--bg);
-  color: var(--text-light);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.lang-btn:hover {
-  color: var(--text);
-  border-color: var(--text);
-}
-
-.lang-btn.active {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-}
-
 /* Hero Section Adjustment */
 .hero {
   text-align: left;
-  padding: 120px 0 40px; /* Increased top padding for navbar */
+  padding: 80px 0 60px;
+  background-image: url('images/main.png');
+  background-size: 50%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
   animation: fadeIn 1s ease-out;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.8) 0%, rgba(18, 18, 18, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 24px;
-  color: var(--text);
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   animation: slideIn 1s ease-out;
 }
 
 .intro {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 1.5;
-  color: var(--text);
+  color: var(--primary);
   font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   animation: slideIn 1s ease-out 0.2s backwards;
 }
 
@@ -280,9 +283,9 @@ section h2 {
 
 /* Portfolio Cards */
 .works {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   margin-top: 32px;
 }
 
@@ -292,6 +295,12 @@ section h2 {
   border-radius: 8px;
   padding: 24px;
   transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.work + .work {
+  margin-top: 0;
 }
 
 .work:hover {
@@ -403,6 +412,69 @@ section h2 {
   z-index: 1;
 }
 
+.project-main-img {
+  width: 100%;
+  max-width: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .project-main-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.figma-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.figma-gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 160px;
+  flex: 1 1 120px;
+}
+
+.figma-img {
+  width: 100%;
+  max-width: 140px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  margin-bottom: 8px;
+  object-fit: cover;
+  background: #fff;
+}
+
+.figma-caption {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .figma-gallery {
+    gap: 12px;
+  }
+  .figma-gallery-item {
+    max-width: 100px;
+  }
+  .figma-img {
+    max-width: 90px;
+  }
+}
+
 /* Responsive Updates */
 @media (max-width: 768px) {
   .container {
@@ -410,15 +482,18 @@ section h2 {
   }
   
   .hero {
-    padding: 60px 0 32px;
+    padding: 70px 0 50px;
+    min-height: 50vh;
+    background-size: 60%;
+    background-position: center right;
   }
   
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   
   .intro {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
   
   section {
@@ -437,5 +512,31 @@ section h2 {
 
   .goals li:hover {
     transform: translateX(5px);
+  }
+} 
+
+.work.figma-bg {
+  background: linear-gradient(120deg, rgba(18,18,18,0.92) 60%, rgba(18,18,18,0.7) 100%), url('images/figma_main.png');
+  background-size: contain;
+  background-position:  center;
+  background-repeat: no-repeat;
+  background-color: #181818;
+  position: relative;
+  color: var(--primary);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
+.work.figma-bg .work-title,
+.work.figma-bg .work-desc,
+.work.figma-bg .figma-caption,
+.work.figma-bg .btn {
+  color: var(--primary);
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 768px) {
+  .work.figma-bg {
+    background-position: center;
+    background-size: contain;
   }
 } 
