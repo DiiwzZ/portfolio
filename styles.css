@@ -611,6 +611,21 @@ section h2 {
   position: relative;
   color: var(--primary);
   box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.work.featured-project {
+  border: 1px solid rgba(255, 107, 53, 0.6) !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15), 0 4px 16px rgba(0,0,0,0.1) !important;
+  transform: scale(1.01);
+  transition: all 0.3s ease;
+}
+
+.work.featured-project:hover {
+  border: 1px solid rgba(255, 107, 53, 0.8) !important;
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.2), 0 8px 25px rgba(0,0,0,0.15) !important;
+  transform: scale(1.02);
 }
 
 .work.figma-bg .work-title,
@@ -621,10 +636,69 @@ section h2 {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.35);
 }
 
+/* Enhanced Figma Project Styling */
+.featured-project .work-title {
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+}
+
+.featured-project .figma-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.featured-project .figma-img:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  border-color: #ff6b35;
+}
+
+.featured-project .btn {
+  background: rgba(255, 107, 53, 0.9) !important;
+  border: 1px solid rgba(255, 107, 53, 0.7) !important;
+  color: white !important;
+  font-weight: 500 !important;
+  padding: 10px 20px !important;
+  transition: all 0.3s ease !important;
+  text-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+
+.featured-project .btn:hover {
+  background: rgba(255, 107, 53, 1) !important;
+  border-color: rgba(255, 107, 53, 1) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(255, 107, 53, 0.3);
+}
+
 @media (max-width: 768px) {
   .work.figma-bg {
     background-position: center;
     background-size: contain;
+  }
+  
+  .work.featured-project {
+    transform: scale(1.005);
+    border-width: 1px !important;
+  }
+  
+  .featured-project .work-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .featured-project .figma-img:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+  
+  .featured-project .btn {
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
   }
 } 
 
@@ -710,10 +784,14 @@ section h2 {
 @media (max-width: 900px) {
   .logo-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 24px;
+  }
+  .logo-grid-left {
+    margin-bottom: 16px;
   }
   .logo-grid-right {
     align-items: stretch;
+    margin-top: 16px;
   }
   .logo-profile-img {
     max-width: 100%;
@@ -802,6 +880,7 @@ section h2 {
   .overlap-gallery {
     gap: 8px;
     min-height: 60px;
+    margin-bottom: 20px;
   }
   .overlap-img {
     width: 28vw;
@@ -813,6 +892,13 @@ section h2 {
   }
   .logo-grid-left {
     justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+  .logo-grid {
+    gap: 32px;
+  }
+  .logo-grid-right {
+    margin-top: 24px;
   }
 } 
 
