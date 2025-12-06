@@ -53,4 +53,60 @@ document.addEventListener('DOMContentLoaded', () => {
             this.load(); // This will reload the video and show poster
         });
     });
+
+    // Web Project Image Popup Modal
+    const webPopupModal = document.getElementById('web-popup-modal');
+    const webPopupImg = document.getElementById('web-popup-img');
+    const webPopupCaption = document.getElementById('web-popup-caption');
+    const webPopupClose = document.querySelector('.web-popup-close');
+
+    // Check if modal exists before adding event listeners
+    if (webPopupModal && webPopupImg && webPopupCaption) {
+        // Add click event to all web project images
+        document.querySelectorAll('.web-popup-img').forEach(img => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const imgSrc = this.getAttribute('data-src') || this.getAttribute('src');
+                const imgCaption = this.getAttribute('data-caption') || this.getAttribute('alt');
+                
+                if (imgSrc && webPopupImg && webPopupCaption) {
+                    webPopupImg.src = imgSrc;
+                    webPopupImg.alt = imgCaption || '';
+                    webPopupCaption.textContent = imgCaption || '';
+                    webPopupModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
+        });
+    }
+
+    // Close popup when clicking close button
+    if (webPopupClose && webPopupModal) {
+        webPopupClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            webPopupModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+    }
+
+    // Close popup when clicking outside the image
+    if (webPopupModal) {
+        webPopupModal.addEventListener('click', function(e) {
+            if (e.target === webPopupModal || e.target.classList.contains('logo-popup-modal')) {
+                webPopupModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+        });
+    }
+
+    // Close popup with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && webPopupModal && webPopupModal.classList.contains('active')) {
+            webPopupModal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
 }); 

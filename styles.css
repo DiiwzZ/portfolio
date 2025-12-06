@@ -313,11 +313,11 @@ section h2 {
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 12px;
-  color: var(--text);
+  color: var(--primary);
 }
 
 .work-desc {
-  color: var(--text-light);
+  color: var(--text);
   font-size: 0.9rem;
   line-height: 1.6;
 }
@@ -495,11 +495,21 @@ section h2 {
   margin-bottom: 8px;
   object-fit: cover;
   background: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.figma-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.web-popup-img {
+  cursor: pointer;
 }
 
 .figma-caption {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text);
   text-align: center;
 }
 
@@ -545,7 +555,7 @@ section h2 {
 
 .illustrator-caption {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text);
   text-align: center;
 }
 
@@ -607,45 +617,133 @@ section h2 {
   background-size: contain;
   background-position:  center;
   background-repeat: no-repeat;
-  background-color: #181818;
+  background-color: #18181800;
   position: relative;
-  color: var(--primary);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  border: 2px solid transparent;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+/* Figma project in Featured Projects gets gold border */
+#project-contents + .works .work.figma-bg {
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2), 0 4px 16px rgba(0,0,0,0.15);
+}
+
+#project-contents + .works .work.figma-bg:hover {
+  border: 2px solid rgba(255, 193, 7, 0.8);
+  box-shadow: 0 12px 35px rgba(255, 193, 7, 0.3), 0 8px 25px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
+.work.figma-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Featured Projects - Highest priority (Gold/Orange) */
+#project-contents + .works .work {
+  border: 2px solid rgba(255, 193, 7, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2), 0 4px 16px rgba(0,0,0,0.15);
   transition: all 0.3s ease;
 }
 
+#project-contents + .works .work:hover {
+  border: 2px solid rgba(255, 193, 7, 0.8);
+  box-shadow: 0 12px 35px rgba(255, 193, 7, 0.3), 0 8px 25px rgba(0,0,0,0.2);
+  transform: translateY(-4px);
+}
+
 .work.featured-project {
-  border: 1px solid rgba(255, 107, 53, 0.6) !important;
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15), 0 4px 16px rgba(0,0,0,0.1) !important;
+  border: 2px solid rgba(255, 193, 7, 0.6) !important;
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.2), 0 4px 16px rgba(0,0,0,0.15) !important;
   transform: scale(1.01);
   transition: all 0.3s ease;
 }
 
 .work.featured-project:hover {
-  border: 1px solid rgba(255, 107, 53, 0.8) !important;
-  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.2), 0 8px 25px rgba(0,0,0,0.15) !important;
-  transform: scale(1.02);
+  border: 2px solid rgba(255, 193, 7, 0.9) !important;
+  box-shadow: 0 12px 35px rgba(255, 193, 7, 0.35), 0 8px 25px rgba(0,0,0,0.2) !important;
+  transform: scale(1.02) translateY(-2px);
 }
 
-.work.figma-bg .work-title,
-.work.figma-bg .work-desc,
-.work.figma-bg .figma-caption,
-.work.figma-bg .btn {
-  color: var(--primary);
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.35);
+/* Work Experiences - Medium priority (Blue/Cyan) */
+#work-experiences + .works .work {
+  border: 2px solid rgba(33, 150, 243, 0.4);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.15), 0 3px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
-/* Enhanced Figma Project Styling */
+#work-experiences + .works .work:hover {
+  border: 2px solid rgba(33, 150, 243, 0.7);
+  box-shadow: 0 10px 30px rgba(33, 150, 243, 0.25), 0 6px 20px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
+}
+
+/* Additional Projects - Lower priority (Purple/Gray) */
+/* Target works that come after h3.mt-5 that is not work-experiences */
+.portfolio h3.mt-5:not(#work-experiences) + .works .work {
+  border: 1px solid rgba(156, 39, 176, 0.3);
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.1), 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.portfolio h3.mt-5:not(#work-experiences) + .works .work:hover {
+  border: 1px solid rgba(156, 39, 176, 0.5);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.2), 0 4px 15px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.work.figma-bg:not(.featured-project) .work-title {
+  color: var(--text);
+  text-shadow: none;
+}
+
+.work.figma-bg:not(.featured-project) .work-desc {
+  color: var(--text);
+  text-shadow: none;
+}
+
+.work.figma-bg:not(.featured-project) .figma-caption {
+  color: var(--text);
+  text-shadow: none;
+}
+
+.work.figma-bg:not(.featured-project) .btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--text);
+  text-shadow: none;
+}
+
+.work.figma-bg:not(.featured-project) .btn:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+/* Enhanced Featured Project Title Styling - Gold Theme */
+#project-contents + .works .work .work-title,
 .featured-project .work-title {
   font-size: 1.3rem !important;
   font-weight: 600 !important;
   margin-bottom: 16px !important;
-  background: linear-gradient(45deg, #ff6b35, #f7931e);
+  background: linear-gradient(45deg, #ffc107, #ff9800);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: none !important;
+}
+
+/* Figma project in Featured Projects - apply gold theme to title (override any other styles) */
+#project-contents + .works .work.figma-bg .work-title {
+  background: linear-gradient(45deg, #ffc107, #ff9800) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  text-shadow: none !important;
+  font-size: 1.3rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 16px !important;
+  color: transparent !important;
 }
 
 .featured-project .figma-img {
@@ -832,20 +930,33 @@ section h2 {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0; top: 0; width: 100vw; height: 100vh;
-  background: rgba(0,0,0,0.7);
+  left: 0; 
+  top: 0; 
+  width: 100vw; 
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
 }
-.logo-popup-modal.active { display: flex; }
+.logo-popup-modal.active { 
+  display: flex; 
+}
 .logo-popup-content {
   max-width: 90vw;
-  max-height: 70vh;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
   background: #fff;
   margin-bottom: 16px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .logo-popup-close {
   color: #fff;
@@ -1032,7 +1143,7 @@ section h2 {
 
 .work-source-caption {
   font-size: 0.65rem;
-  color: var(--text-light);
+  color: var(--text);
   text-align: center;
 }
 
@@ -1145,7 +1256,7 @@ section h2 {
 
 .maginta-result-caption {
   font-size: 0.95rem;
-  color: var(--text-light);
+  color: var(--text);
   text-align: center;
   margin-top: 8px;
 }
